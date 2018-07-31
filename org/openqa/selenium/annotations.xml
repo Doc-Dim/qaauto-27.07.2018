@@ -1,0 +1,5 @@
+<root>
+    <item name='org.openqa.selenium.By org.openqa.selenium.By name(java.lang.String)'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
