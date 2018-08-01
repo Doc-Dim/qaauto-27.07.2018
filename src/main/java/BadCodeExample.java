@@ -22,8 +22,7 @@ public class BadCodeExample{
         for (WebElement searchResult: searchResults) {
             String searchResultText = searchResult.getText();
             System.out.println(searchResultText);
-        }
-                             //HOME task search result count is 10 result - count resalt is wrong and 10 is ok и то что в каждом результате есть слово селениум - одна проверка пред фор а вторая внутри//
+        //HOME task search result count is 10 result - count resalt is wrong and 10 is ok и то что в каждом результате есть слово селениум - одна проверка пред фор а вторая внутри//
 
 
 
