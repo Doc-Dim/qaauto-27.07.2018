@@ -19,20 +19,20 @@ public class BadCodeExample {
         List<WebElement> searchResults = browser.findElements(By.xpath("//div[@class='srg']/div[@class='g']"));
         System.out.println("Results  count: " + searchResults.size());
         if (searchResults.size()==10) {
-            System.out.println("=10");
+            System.out.println("Results count is correct");
         }
         else {
-            System.out.println("<10");
+            System.out.println("Results count is incorrect");
         }
         //verify  that each result item conteins searchterms*//
+        //for each searchresult in searchresult list
         int conteins=0;
         int notconteins=0;
         for (WebElement searchResult : searchResults) {
             String searchResultText = searchResult.getText();
             System.out.println(searchResultText);
             System.out.println("searchResultText");
-
-            if (searchResultText.contains("selenium")) {
+            if (searchResultText.toLowerCase().contains("selenium")) {
               conteins ++;
             }
              else {
@@ -41,9 +41,11 @@ public class BadCodeExample {
             //Use if/else operators to add simple verifications in Google search scenario
             //- Print message "Results count is correct" if there are 10 results and print "Results count is incorrect" if not 10.
             //- Print message "Searchterm found" if searchterm is present in result item and "Searchterm not found" if not.
+            System.out.println("SearchResult thet Conteins Term:" + conteins);
+            System.out.println("SearchResult thet don't Conteins Term:" + notconteins);
+
         }
-        System.out.println("SearchResult thet Conteins Term:" + conteins);
-        System.out.println("SearchResult thet don't Conteins Term:" + notconteins);
+      //test for login on the page in java test
         browser.close();
     }
 }
