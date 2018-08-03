@@ -8,6 +8,17 @@ import org.testng.annotations.Test;
 public class LinkedinLoginTest {
     @Test
     public void successfulllogintest () {
+        WebDriver browser = new FirefoxDriver();
+        browser.get("https://www.linkedin.com/");
+        WebElement userEmailField = browser.findElement(By.xpath("//*[@id=\"login-email\"]"));
+
+        WebElement userPasswordField = browser.findElement(By.xpath("//*[@id=\"login-password\"]"));
+
+        WebElement signInButton = browser.findElement(By.xpath("//*[@id=\"login-submit\"]"));
+
+        userEmailField.sendKeys("a@b.c");
+        userPasswordField.sendKeys("wrong");
+        signInButton.click();
 
     }
     @Test
