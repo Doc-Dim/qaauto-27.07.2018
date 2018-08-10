@@ -1,30 +1,36 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 public class LinkedinHomePage {
 
-    WebDriver browser;
-
-    public LinkedinHomePage () {
-
-    this.browser = browser;
-    initElements();
-}
+    private WebDriver browser;
+    private WebElement profileNavigationItem;
 
 
-    public void initElements(){
-    WebElement profileNavigationItem = browser.findElement(By.xpath("//*[@id='profile-nav-item']"));
-    Assert.assertTrue(profileNavigationItem.isDisplayed(),"'profileNavigationItem' is not displayed on Home page");
+    public LinkedinHomePage(WebDriver browser) {
+        this.browser = browser;
+        initElements();
+    }
+    private void initElements(){
+        profileNavigationItem = browser.findElement(By.xpath("//*[@id='profile-nav-item']"));
 
     }
 
-    public boolean ProfileNavigationItemPresent(){
-        profileNavigationItem() = browser.findElement(By.xpath("//*[@id='profile-nav-item']"));
-        return profileNavigationItem.isDisplayed();
+
+    public String getCurrentPageTitle (){
+        return browser.getTitle();
+    }
+    public String getCurrentPageUrl(){
+        return browser.getCurrentUrl();
     }
 
+    public boolean isLoaded() {
+        return profileNavigationItem.isDisplayed() &&
+                getCurrentPageTitle().contains("Linkedin")
+                && getCurrentPageUrl().contains("/feed/");
+
+    }
 }
 
 
