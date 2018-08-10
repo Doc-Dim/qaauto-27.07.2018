@@ -25,6 +25,10 @@ public class LinkedinLoginTest {
         browser.close();
         /*выплняется после метода*/
     }
+    public void  LinkedinHomePage(){
+
+    }
+
 
     @Test
     public void successfulllogintest() throws InterruptedException {
@@ -49,8 +53,6 @@ public class LinkedinLoginTest {
         //*Assert page URL after login
         String pageUrl = browser.getCurrentUrl();
         Assert.assertEquals(pageUrl, "https://www.linkedin.com/feed/","Home page url is wrong");
-
-
 
     }
 
