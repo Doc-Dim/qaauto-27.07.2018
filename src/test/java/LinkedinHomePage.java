@@ -27,19 +27,11 @@ public class LinkedinHomePage {
 
     public boolean isLoaded() {
         return profileNavigationItem.isDisplayed() &&
-                getCurrentPageTitle().contains("Linkedin")
-                && getCurrentPageUrl().contains("/feed/");
+                getCurrentPageTitle().contains("Sign on to Linkedin")
+                && getCurrentPageUrl().contains("https://www.linkedin.com/uas/login-submit");
 
     }
+
+
+
 }
-
-
-/*Home Task #4:
-Update successfulLoginTest() to use LinkedinHomePage object.
-- Create new page object class called LinkedinHomePage.class
-- Move profileNavidationItem into this new class
-- Add LinkedinHomePage constructor with browser parameter
-- Add initElements() method to initialise profoleNavigationItem
-- Add boolean method isProfileNavigationItemDisplayed() in a new class.
-- Use new LinkedinHomePage in successfulLoginTest()
-- Use isProfileNavigationItemDisplayed() method in last Assert.*/
