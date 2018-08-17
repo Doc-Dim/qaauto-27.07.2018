@@ -2,10 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LinkedinLoginSubmitPage {
+public class LinkedinLoginSubmitPage extends BasePage{
 
 
-    private WebDriver browser;
+
     private WebElement alertBox;
     private WebElement userEmailValidationText;
     private WebElement userPasswordValidationText;
@@ -29,13 +29,6 @@ public class LinkedinLoginSubmitPage {
         return alertBox.getText();
     }
 
-    public String getCurrentPageTitle() {
-        return browser.getTitle();
-    }
-
-    public String getCurrentPageUrl() {
-        return browser.getCurrentUrl();
-    }
 
     public boolean isLoaded() {
         return alertBox.isDisplayed() &&
@@ -49,6 +42,7 @@ public class LinkedinLoginSubmitPage {
     }
 
     public String getUserPasswordValidationText() {
+
         return userPasswordValidationText.getText();
     }
 }

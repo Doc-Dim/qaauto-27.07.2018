@@ -2,9 +2,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LinkedinHomePage {
+public class LinkedinHomePage extends BasePage{
 
-    private WebDriver browser;
     private WebElement profileNavigationItem;
 
 
@@ -18,12 +17,6 @@ public class LinkedinHomePage {
     }
 
 
-    public String getCurrentPageTitle (){
-        return browser.getTitle();
-    }
-    public String getCurrentPageUrl(){
-        return browser.getCurrentUrl();
-    }
 
     public boolean isLoaded() {
         return profileNavigationItem.isDisplayed() &&
